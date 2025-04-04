@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Lawyer</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find-lawyer">Find Lawyer</a>
+    </nav>
+    <h1>Find a Lawyer</h1>
+    <div class="lawyer-list">
+        {% for lawyer in lawyers %}
+        <div class="lawyer-card">
+            <img src="{{ lawyer.image_url }}" alt="{{ lawyer.name }}">
+            <h3>{{ lawyer.name }}</h3>
+            <p>Specialty: {{ lawyer.specialty }}</p>
+            <p>Rating: ⭐️{{ lawyer.rating }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

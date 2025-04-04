@@ -1,0 +1,38 @@
+<!-- filepath: c:\Users\Anand\flask1\templates\search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+        .lawyer-card {
+            display: inline-block;
+            width: 220px;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f4f4f4;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .lawyer-card h3 { color: #005a87; }
+    </style>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+            {% if lawyers %}
+                    <ul>
+                        {% for lawyer in lawyers %}
+                            <li>
+                                <strong>{{ lawyer.name }}</strong><br>
+                                Address: {{ lawyer.address }}<br>
+                                Phone: {{ lawyer.phone }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found.</p>
+                {% endif %}
+            </body>
+            </html>
+</html>
