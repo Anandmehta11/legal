@@ -1,0 +1,211 @@
+{% extends "feature_base.html" %}
+
+{% block title %}Community{% endblock %}
+
+{% block feature_icon %}👥{% endblock %}
+
+{% block feature_title %}Legal Community Platform{% endblock %}
+
+{% block content %}
+<div class="community-feature">
+    <h2>Join Our Thriving Legal Community</h2>
+    
+    <div class="community-section">
+        <h3>Network with Professionals</h3>
+        <p>Connect with fellow lawyers and legal professionals:</p>
+        <ul>
+            <li>Build professional relationships</li>
+            <li>Share experiences and insights</li>
+            <li>Collaborate on cases</li>
+            <li>Mentor or find mentorship</li>
+        </ul>
+    </div>
+
+    <div class="community-section">
+        <h3>Discussion Forums</h3>
+        <p>Engage in meaningful discussions about:</p>
+        <ul>
+            <li>Legal trends and developments</li>
+            <li>Case studies and analysis</li>
+            <li>Practice management tips</li>
+            <li>Professional challenges and solutions</li>
+        </ul>
+    </div>
+
+    <div class="community-section">
+        <h3>Knowledge Sharing</h3>
+        <p>Access and contribute to shared resources:</p>
+        <ul>
+            <li>Document templates</li>
+            <li>Legal research materials</li>
+            <li>Best practices guides</li>
+            <li>Professional development resources</li>
+        </ul>
+    </div>
+
+    <div class="community-section">
+        <h3>Events and Webinars</h3>
+        <p>Stay updated with:</p>
+        <ul>
+            <li>Online workshops</li>
+            <li>Legal conferences</li>
+            <li>Networking events</li>
+            <li>Continuing education sessions</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .community-feature {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .community-feature h2 {
+        color: #1e3a5f;
+        font-size: 2em;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+    .community-feature h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, #1e3a5f, #005a87);
+        border-radius: 2px;
+    }
+    .community-section {
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+        position: relative;
+        overflow: hidden;
+    }
+    .community-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .community-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(135deg, transparent 50%, rgba(30, 58, 95, 0.1));
+        border-radius: 0 15px 0 0;
+        transition: all 0.3s ease;
+    }
+    .community-section:hover:before {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+    .community-section h3 {
+        color: #1e3a5f;
+        margin-bottom: 1.5rem;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+    .community-section h3:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 15px;
+        color: #3498db;
+        font-size: 1.2em;
+        width: 40px;
+        height: 40px;
+        background: #f0f4f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    .community-section:hover h3:before {
+        background: #1e3a5f;
+        color: white;
+        transform: rotate(360deg);
+    }
+    .community-section:nth-child(1) h3:before { content: '\f500'; }
+    .community-section:nth-child(2) h3:before { content: '\f086'; }
+    .community-section:nth-child(3) h3:before { content: '\f0c0'; }
+    .community-section:nth-child(4) h3:before { content: '\f073'; }
+    
+    .community-section p {
+        color: #666;
+        line-height: 1.6;
+        margin: 1rem 0;
+        font-size: 1.1em;
+        position: relative;
+        z-index: 1;
+        padding-left: 55px;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 55px;
+        margin: 1.5rem 0;
+        position: relative;
+        z-index: 1;
+    }
+    ul li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 1.5rem;
+        color: #333;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+    }
+    ul li:before {
+        content: '\f061';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: #3498db;
+        position: absolute;
+        left: -5px;
+        transition: transform 0.3s ease;
+    }
+    ul li:hover {
+        color: #1e3a5f;
+        transform: translateX(10px);
+    }
+    ul li:hover:before {
+        transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+        .community-feature h2 {
+            font-size: 1.8em;
+        }
+        .community-section {
+            padding: 1.5rem;
+        }
+        .community-section h3 {
+            font-size: 1.3em;
+        }
+        .community-section p {
+            padding-left: 40px;
+        }
+        ul {
+            padding-left: 40px;
+        }
+        ul li {
+            font-size: 1em;
+        }
+    }
+</style>
+{% endblock %} 

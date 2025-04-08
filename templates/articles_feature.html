@@ -1,0 +1,216 @@
+{% extends "feature_base.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block feature_icon %}📄{% endblock %}
+
+{% block feature_title %}Legal Articles & Resources{% endblock %}
+
+{% block content %}
+<div class="articles-feature">
+    <h2>Stay Informed with Expert Legal Content</h2>
+    
+    <div class="articles-section featured">
+        <h3>Featured Articles</h3>
+        <div class="article-cards">
+            <div class="article-card">
+                <h4>Understanding Property Rights</h4>
+                <p class="author">By Senior Advocate Rahul Sharma</p>
+                <p class="preview">A comprehensive guide to property rights in India...</p>
+                <span class="read-more">Read More →</span>
+            </div>
+            <div class="article-card">
+                <h4>Corporate Law Updates 2024</h4>
+                <p class="author">By Legal Expert Priya Patel</p>
+                <p class="preview">Latest changes in corporate law and their implications...</p>
+                <span class="read-more">Read More →</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="articles-section categories">
+        <h3>Browse by Category</h3>
+        <div class="category-grid">
+            <div class="category-item">Constitutional Law</div>
+            <div class="category-item">Criminal Law</div>
+            <div class="category-item">Family Law</div>
+            <div class="category-item">Corporate Law</div>
+            <div class="category-item">Property Law</div>
+            <div class="category-item">Tax Law</div>
+        </div>
+    </div>
+
+    <div class="articles-section">
+        <h3>Latest Legal Updates</h3>
+        <ul class="updates-list">
+            <li>
+                <span class="date">Mar 15, 2024</span>
+                <span class="title">Supreme Court Judgment on Digital Privacy</span>
+            </li>
+            <li>
+                <span class="date">Mar 10, 2024</span>
+                <span class="title">New Guidelines for Corporate Compliance</span>
+            </li>
+            <li>
+                <span class="date">Mar 05, 2024</span>
+                <span class="title">Changes in Property Registration Process</span>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .articles-feature {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .articles-section {
+        margin-bottom: 3rem;
+    }
+    .articles-section h3 {
+        color: #1e3a5f;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #3498db;
+        font-size: 1.8em;
+    }
+    .article-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .article-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .article-card h4 {
+        margin: 0 0 0.5rem 0;
+        color: #1e3a5f;
+        font-size: 1.4em;
+    }
+    .author {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .author:before {
+        content: '\f007';
+        font-family: 'Font Awesome 5 Free';
+        margin-right: 8px;
+        color: #3498db;
+    }
+    .preview {
+        color: #555;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+    .read-more {
+        color: #3498db;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .read-more:after {
+        content: '\f061';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    .read-more:hover {
+        color: #1e3a5f;
+    }
+    .read-more:hover:after {
+        transform: translateX(5px);
+    }
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    .category-item {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+        font-weight: 500;
+        color: #1e3a5f;
+    }
+    .category-item:hover {
+        background: #1e3a5f;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .updates-list {
+        list-style: none;
+        padding: 0;
+    }
+    .updates-list li {
+        display: flex;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    .updates-list li:hover {
+        transform: translateX(10px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .date {
+        min-width: 120px;
+        color: #666;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+    .date:before {
+        content: '\f133';
+        font-family: 'Font Awesome 5 Free';
+        margin-right: 8px;
+        color: #3498db;
+    }
+    .title {
+        color: #1e3a5f;
+        margin-left: 1rem;
+        font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+        .article-cards {
+            grid-template-columns: 1fr;
+        }
+        .category-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+        .updates-list li {
+            flex-direction: column;
+        }
+        .date {
+            margin-bottom: 0.5rem;
+        }
+        .title {
+            margin-left: 0;
+        }
+    }
+</style>
+{% endblock %} 

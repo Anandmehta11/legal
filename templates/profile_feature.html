@@ -1,0 +1,198 @@
+{% extends "feature_base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block feature_icon %}👤{% endblock %}
+
+{% block feature_title %}Lawyer Profiles{% endblock %}
+
+{% block content %}
+<div class="profile-feature">
+    <h2>Comprehensive Lawyer Profiles</h2>
+    
+    <div class="profile-section">
+        <h3>Detailed Information</h3>
+        <ul>
+            <li>Professional qualifications and certifications</li>
+            <li>Years of experience</li>
+            <li>Areas of expertise</li>
+            <li>Languages spoken</li>
+            <li>Office locations and working hours</li>
+        </ul>
+    </div>
+
+    <div class="profile-section">
+        <h3>Verified Reviews</h3>
+        <p>Read authentic reviews from previous clients to make informed decisions:</p>
+        <ul>
+            <li>Star ratings</li>
+            <li>Detailed feedback</li>
+            <li>Case outcomes</li>
+            <li>Client experiences</li>
+        </ul>
+    </div>
+
+    <div class="profile-section">
+        <h3>Case History</h3>
+        <p>View lawyer's track record and expertise:</p>
+        <ul>
+            <li>Types of cases handled</li>
+            <li>Success rates</li>
+            <li>Notable achievements</li>
+            <li>Specialization areas</li>
+        </ul>
+    </div>
+
+    <div class="profile-section">
+        <h3>Contact Information</h3>
+        <p>Multiple ways to reach out:</p>
+        <ul>
+            <li>Direct messaging</li>
+            <li>Office contact details</li>
+            <li>Appointment scheduling</li>
+            <li>Response time information</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .profile-feature {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .profile-feature h2 {
+        color: #1e3a5f;
+        font-size: 2em;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+    .profile-feature h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, #1e3a5f, #005a87);
+        border-radius: 2px;
+    }
+    .profile-section {
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+        position: relative;
+        overflow: hidden;
+    }
+    .profile-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .profile-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #1e3a5f, #005a87);
+    }
+    .profile-section h3 {
+        color: #1e3a5f;
+        margin-bottom: 1.5rem;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+    }
+    .profile-section h3:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+        background: #f0f4f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1e3a5f;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+    }
+    .profile-section:hover h3:before {
+        background: #1e3a5f;
+        color: white;
+        transform: rotate(360deg);
+    }
+    .profile-section:nth-child(1) h3:before { content: '\f2bb'; }
+    .profile-section:nth-child(2) h3:before { content: '\f005'; }
+    .profile-section:nth-child(3) h3:before { content: '\f0b1'; }
+    .profile-section:nth-child(4) h3:before { content: '\f2a0'; }
+    
+    .profile-section p {
+        color: #666;
+        line-height: 1.6;
+        margin: 1rem 0;
+        font-size: 1.1em;
+        padding-left: 55px;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 55px;
+        margin: 1.5rem 0;
+    }
+    ul li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 1.5rem;
+        color: #333;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+    }
+    ul li:before {
+        content: '\f058';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: #27ae60;
+        position: absolute;
+        left: -5px;
+        transition: transform 0.3s ease;
+    }
+    ul li:hover {
+        color: #1e3a5f;
+        transform: translateX(5px);
+    }
+    ul li:hover:before {
+        transform: scale(1.2);
+    }
+    
+    @media (max-width: 768px) {
+        .profile-feature h2 {
+            font-size: 1.8em;
+        }
+        .profile-section {
+            padding: 1.5rem;
+        }
+        .profile-section h3 {
+            font-size: 1.3em;
+        }
+        .profile-section p {
+            padding-left: 40px;
+        }
+        ul {
+            padding-left: 40px;
+        }
+        ul li {
+            font-size: 1em;
+        }
+    }
+</style>
+{% endblock %} 

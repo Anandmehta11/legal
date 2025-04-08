@@ -334,6 +334,22 @@ def lawyer_profile(lawyer_id):
         flash('Lawyer not found', 'error')
         return redirect(url_for('home'))
 
+@app.route('/search-feature')
+def search_feature():
+    return render_template('search_feature.html')
+
+@app.route('/profile-feature')
+def profile_feature():
+    return render_template('profile_feature.html')
+
+@app.route('/community-feature')
+def community_feature():
+    return render_template('community_feature.html')
+
+@app.route('/articles-feature')
+def articles_feature():
+    return render_template('articles_feature.html')
+
 if __name__ == '__main__':   
     app.run(debug=True)
 
